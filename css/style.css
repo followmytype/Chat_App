@@ -38,11 +38,18 @@ body {
     color: #721c24;
     background: #f8d7da;
     padding: 8px 10px;
-    text-align: center;
+    /* text-align: center; */
+    max-height: 65px;
+    overflow-y: auto;
     border-radius: 5px;
     margin-bottom: 10px;
     border: 1px solid #f5c6cb;
     display: none;
+}
+.form form .error-txt ul {
+    position: relative;
+    left: 25px;
+    width: 350px;
 }
 .form form .field {
     display: flex;
@@ -95,7 +102,7 @@ body {
     content: '\f070';
     color: #333;
 }
-.form form ul {
+.form form .image ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +111,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.form form li {
+.form form .image li {
     padding: 5px;
     height: 60px;
 }

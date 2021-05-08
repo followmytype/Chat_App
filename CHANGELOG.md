@@ -1,5 +1,21 @@
 # CHANGE LOG
 
+## Version 0.0.3 / 2021-05-08
+### `Database and table build & Signup AJAX & Form Validate`
+* 資料庫建立 - `sql/database.sql`
+    * 使用者資料表建立
+* 資料庫連結程式 - `php/DBLink.php`
+    * 建立連結資料庫的程式
+    * 使用裡面的`connect()`就能得到使用`PDO`的物件回傳
+* 表單驗證程式 - `php/FormValidate.php`
+    * 建立驗證註冊登入的物件，把資料以及表單型態放進去，就能得到轉換後的資料和錯誤訊息
+* 新增註冊程式 - `php/register.php`
+    * 目前還沒做完，只有做輸入驗證
+* 新增註冊的`AJAX`檔案 - `javascript/signup.js`
+    * 發送`POST`給`php/register.php`
+* 一些樣式修改 - `css/style.css`
+    * 錯誤訊息樣式修改
+---
 ## Version 0.0.2 / 2021-05-08
 ### `Frontend Page & JS`
 * 使用者註冊上傳圖片改成選擇圖片，目前階段先不考慮讓使用者上傳自己的圖片
