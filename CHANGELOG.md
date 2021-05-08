@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## Version 0.0.2 / 2021-05-08
+### `Frontend Page & JS`
+* 使用者註冊上傳圖片改成選擇圖片，目前階段先不考慮讓使用者上傳自己的圖片
+---
 ## Version 0.0.2 / 2021-05-07
 ### `Frontend Page & JS`
 * 前端頁面一些`js`效果以及`form`表單的`input type`修改
