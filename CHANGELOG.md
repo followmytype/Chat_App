@@ -1,5 +1,13 @@
 # CHANGE LOG
 
+## Version 0.0.5 / 2021-05-09
+### `Login completed`
+* 後端登入功能完成 - `php/login.php`
+    * 使用者登入完成，簡單判斷`email`跟`password`是否相符就讓他登入
+    * 使用`session`的方式紀錄
+* 前端註冊功能完成 - `javascript/login.js`
+    * 當收到`ajax`的回傳成功訊息，跳轉到使用者頁面(`users.php`)
+---
 ## Version 0.0.4 / 2021-05-09
 ### `Register completed`
 * 使用者物件建立 - `php/Users.php`
