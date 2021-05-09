@@ -5,15 +5,26 @@
     }
 ?>
 <?php include_once "header.php"; ?>
+<?php 
+    include_once "php/DBLink.php";
+    include_once "php/Users.php";
+    use Matt\DBLink as DB;
+    use Matt\Users as Users;
+
+    $database = new DB();
+    $conn = $database->connect();
+    $user = new Users($conn);
+    $user = $user->getUserByUserId($_SESSION['user_id']);
+?>
 <body>
     <div class="wrapper">
         <section class="users">
             <header>
                 <div class="content">
-                    <img src="images/lovely.jpg">
+                    <img src="images/<?php echo $user['image_url']; ?>">
                     <div class="details">
-                        <span>Matt Chen</span>
-                        <p>Active Now</p>
+                        <span><?php echo $user['nick_name']; ?></span>
+                        <p><?php echo $user['status'] ? 'Active now' : 'offline'; ?></p>
                     </div>
                 </div>
                 <a href="" class="logout">Logout</a>
@@ -24,66 +35,6 @@
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">
-                <a href="">
-                    <div class="content">
-                        <img src="images/lovely.jpg">
-                        <div class="details">
-                            <span>Matt Chen</span>
-                            <p>The test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="">
-                    <div class="content">
-                        <img src="images/lovely.jpg">
-                        <div class="details">
-                            <span>Matt Chen</span>
-                            <p>The test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="">
-                    <div class="content">
-                        <img src="images/lovely.jpg">
-                        <div class="details">
-                            <span>Matt Chen</span>
-                            <p>The test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="">
-                    <div class="content">
-                        <img src="images/lovely.jpg">
-                        <div class="details">
-                            <span>Matt Chen</span>
-                            <p>The test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="">
-                    <div class="content">
-                        <img src="images/lovely.jpg">
-                        <div class="details">
-                            <span>Matt Chen</span>
-                            <p>The test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
-                <a href="">
-                    <div class="content">
-                        <img src="images/lovely.jpg">
-                        <div class="details">
-                            <span>Matt Chen</span>
-                            <p>The test message</p>
-                        </div>
-                    </div>
-                    <div class="status-dot"><i class="fas fa-circle"></i></div>
-                </a>
             </div>
         </section>
     </div>

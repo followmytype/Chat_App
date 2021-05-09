@@ -1,5 +1,24 @@
 # CHANGE LOG
 
+## Version 0.0.6 / 2021-05-09
+### `User Page & search completed`
+* `User`物件功能新增 - `php/User.php`
+    1. 用`user_id`取得使用者資訊
+    2. 拿取所有使用者資料
+    3. 搜尋使用者方法
+    4. 將`fetch`和`fetchAll`獨立成方法出來，在其他的方法中可以重複使用
+* 使用者頁面完成 - `users.php`
+* 後端產生使用者列表完成 - `php/userList.php`
+* 後端搜尋功能和產生使用者料表完成 - `php/search.php`
+    1. `php/userList.php` - 回傳所有使用者資訊
+    2. `php/search.php` - 回傳搜尋使用者暱稱
+    3. `php/dealUserList.php` - 因為上面的兩個檔案最後都會回傳同樣格式的輸出，所以新增一個可以重複使用的檔案
+* 前端搜尋取的使用者列表功能完成 - `javascript/users.js`
+    * 每`0.5`秒向後端拿取並更新所有使用者資訊
+* `AJAX`小修改，發送請求使用非同步
+    1. `javascript/login.js`
+    2. `javascript/signup.js`
+---
 ## Version 0.0.5 / 2021-05-09
 ### `Login completed`
 * 後端登入功能完成 - `php/login.php`

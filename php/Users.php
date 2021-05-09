@@ -60,6 +60,43 @@ class Users {
         $email = strtr($email, ['_' => '\_', '%' => '\%']);
         $sql = "SELECT * FROM $this->table WHERE email = $email";
         
+        $user = $this->fetchQuery($sql);
+        
+        return $user;
+    }
+
+    public function getUserByUserId(int $user_id)
+    {
+        $sql = "SELECT nick_name, email, image_url, status FROM $this->table WHERE user_id = $user_id";
+
+        $user = $this->fetchQuery($sql);
+
+        return $user;
+    }
+
+    public function search(string $name)
+    {
+        // $name = $this->db->quote($name);
+        // $name = strtr($name, ['_' => '\_', '%' => '\%']);
+
+        $sql = "SELECT * FROM $this->table WHERE nick_name LIKE '%$name%'";
+
+        $users = $this->fetchAllQuery($sql);
+
+        return $users;
+    }
+
+    public function getAll()
+    {
+        $sql = "SELECT * FROM $this->table";
+
+        $users = $this->fetchAllQuery($sql);
+
+        return $users;
+    }
+
+    private function fetchQuery(string $sql)
+    {
         try {
             $stmt = $this->db->prepare($sql);
             $stmt->execute();
@@ -71,12 +108,16 @@ class Users {
         return $user;
     }
 
-    public function save()
+    private function fetchAllQuery(string $sql)
     {
-    }
+        try {
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
 
-    public function getAll()
-    {
-        
+        return $user ? $user : [];
     }
 }
