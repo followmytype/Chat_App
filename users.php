@@ -6,8 +6,8 @@
 ?>
 <?php include_once "header.php"; ?>
 <?php 
-    include_once "php/DBLink.php";
-    include_once "php/Users.php";
+    include_once "php/classes/DBLink.php";
+    include_once "php/classes/Users.php";
     use Matt\DBLink as DB;
     use Matt\Users as Users;
 

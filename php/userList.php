@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    include_once "DBLink.php";
-    include_once "Users.php";
+    include_once "classes/DBLink.php";
+    include_once "classes/Users.php";
 
     use Matt\DBLink as DB;
     use Matt\Users as Users;

@@ -1,6 +1,13 @@
 # CHANGE LOG
 
 ## Version 0.0.6 / 2021-05-09
+### `Move file position`
+* 發現php檔案越來越多了，把一些類別檔案歸類到classes目錄裡面
+    1. `php/Users.php` -> `php/classes/Users.php`
+    2. `php/DBLink.php` -> `php/classes/DBLink.php`
+    3. `php/FormValidate.php` -> `php/classes/FormValidate.php`
+---
+## Version 0.0.6 / 2021-05-09
 ### `User Page & search completed`
 * `User`物件功能新增 - `php/User.php`
     1. 用`user_id`取得使用者資訊
