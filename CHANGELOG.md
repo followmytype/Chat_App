@@ -1,5 +1,22 @@
 # CHANGE LOG
 
+## Version 0.0.4 / 2021-05-09
+### `Register completed`
+* 使用者物件建立 - `php/Users.php`
+    * 裡面主要功能有新增使用者和拿取使用者資訊，註冊時利用它來檢查`Email`和新增使用者
+* 後端註冊功能完成 - `php/register.php`
+    * 使用者註冊完畢自動登入
+    * 使用`session`的方式紀錄，原本想用`token`的方式，作為未來改進方向
+* 前端註冊功能完成 - `javascript/signup.js`
+    * 當收到`ajax`的回傳成功訊息，跳轉到使用者頁面(`users.php`)
+* 使用`session`作為記錄登入狀態的方式
+    * 因為使用`session`，所以原先的`html`檔都轉換成`php`檔，以便判斷當前的登入狀態
+        1. `index.html -> index.php`
+        2. `login.html -> login.php`
+        3. `users.html -> users.php`
+        4. `chat.html -> chat.php`
+    * 另外新增`header.php`檔案，因為原先的html檔頭都一樣，簡化成使用同一份檔頭
+---
 ## Version 0.0.3 / 2021-05-08
 ### `Database and table build & Signup AJAX & Form Validate`
 * 資料庫建立 - `sql/database.sql`

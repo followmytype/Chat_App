@@ -21,14 +21,19 @@ signupBtn.onclick = () => {
                     errorHTML += "</ul>";
                     errorTxt.innerHTML = errorHTML;
                     errorTxt.style.display = "block";
-                } else {}
+                } else {
+                    location.href = "users.html";
+                }
             }
         }
     }
 
     let formData = new FormData(form);
-    let image_src = document.querySelector(".signup form .image li img.active").src.split('/').pop();
-    formData.append('image', image_src);
+    let active_img = document.querySelector(".signup form .image li img.active");
+    if (active_img) {
+        let image_src = active_img.src.split('/').pop();
+        formData.append('image', image_src);
+    }
 
     xhr.send(formData);
 }
