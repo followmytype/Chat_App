@@ -11,4 +11,11 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
-INSERT INTO users (user_id, nick_name, email, password, api_token) VALUES ('123123', 'test', 'test@email.com', 'password', 'token');
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT,
+    sender_id INT NOT NULL,
+    receiver_id INT NOT NULL,
+    msg varchar(1000),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);

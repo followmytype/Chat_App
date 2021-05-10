@@ -5,7 +5,7 @@
             continue;
             }
             $user['status'] = $user['status'] ? '' : 'offline';
-            echo "<a href=''>
+            echo "<a href='chat.php?user_id=$user[user_id]'>
                     <div class='content'>
                     <img src='images/$user[image_url]'>
                     <div class='details'>

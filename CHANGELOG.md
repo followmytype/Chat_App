@@ -1,5 +1,16 @@
 # CHANGE LOG
 
+## Version 0.0.8 / 2021-05-10
+### `Chat completed`
+* `Message`物件建立，有傳送訊息跟拿取雙方對話內容的兩個方法 - `php/classes/Message.php`
+* 聊天功能完成
+    1. `chat.php` - 將頁面改成動態，會更新對話窗內的訊息，傳送訊息的表單內帶有隱藏的寄送者`id`跟接收者`id`
+    3. `send-chat.php` - 後端處理訊息發送
+    4. `get-chat.php` - 後端提供雙方對話內容
+    2. `chat.js` - 發送`POST`給後端傳送訊息，每`0.5`秒查詢訊息更新內容
+* `FormValidate.php`增加驗證傳送訊息
+* 新增`message`資料表 - `sql/database.php`
+---
 ## Version 0.0.6 / 2021-05-09
 ### `Move file position`
 * 發現php檔案越來越多了，把一些類別檔案歸類到classes目錄裡面

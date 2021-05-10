@@ -24,6 +24,9 @@ class FormValidate {
             case 'login':
                 $this->keys = ['email', 'password'];
                 break;
+            case 'send':
+                $this->keys = ['sender_id', 'receiver_id', 'message'];
+                break;
             default:
                 $this->keys = [];
                 break;
