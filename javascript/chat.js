@@ -8,6 +8,13 @@ form.onsubmit = (e) => {
     e.preventDefault();
 }
 
+chatBox.onmouseenter = () => {
+    chatBox.classList.add('active');
+}
+chatBox.onmouseleave = () => {
+    chatBox.classList.remove('active');
+}
+
 sendBtn.onclick = () => {
     if (inputField.value != "") {
         let xhr = new XMLHttpRequest();
@@ -16,6 +23,7 @@ sendBtn.onclick = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
                     let data = JSON.parse(xhr.response);
+                    scrollToBottom();
                     if (data.errors.length == 0) {
                         inputField.value = "";
                     }
@@ -37,6 +45,9 @@ setInterval(() => {
             if (xhr.status === 200) {
                 let data = xhr.response;
                 chatBox.innerHTML = data;
+                if (!chatBox.classList.contains('active')) {
+                    scrollToBottom();
+                }
             }
         }
     }
@@ -47,3 +58,7 @@ setInterval(() => {
 
     xhr.send(formData);
 }, 500);
+
+function scrollToBottom () {
+    chatBox.scrollTop = chatBox.scrollHeight;
+}

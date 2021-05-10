@@ -27,7 +27,7 @@
                         <p><?php echo $user['status'] ? 'Active now' : 'offline'; ?></p>
                     </div>
                 </div>
-                <a href="" class="logout">Logout</a>
+                <a href="php/logout.php?user_id=<?php echo $_SESSION['user_id']; ?>" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="text">Select an user to start chat</span>

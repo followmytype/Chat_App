@@ -95,6 +95,20 @@ class Users {
         return $users;
     }
 
+    public function loginout(int $user_id, bool $type)
+    {
+        $sql = "UPDATE $this->table SET status = ? WHERE user_id = ?";
+
+        try {
+            $stmt = $this->db->prepare($sql);
+            $result = $stmt->execute([$type ? 1 : 0, $user_id]);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            print_r($e->errorInfo);
+        }
+        return $result;
+    }
+
     private function fetchQuery(string $sql)
     {
         try {

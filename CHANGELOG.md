@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## Version 0.1.0 / 2021-05-09
+### `Log out completed`
+* 登出完成，主要在User物件新建更改狀態的方法，然後在登入的時候改成`true`登出時則為`false`，另外新增`logout.php`，作為消除`session`以及登出後跳轉登入畫面
+---
 ## Version 0.0.9 / 2021-05-09
 ### `Show last message`
 * 使用者列表顯示對話最後一則訊息
