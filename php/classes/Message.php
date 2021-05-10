@@ -56,4 +56,25 @@ class Message {
 
         return $messages ? array_reverse($messages) : [];
     }
+
+    public function getLastTalk($sender, $receiver)
+    {
+        $query = "SELECT * FROM $this->table 
+                  WHERE (sender_id = $sender AND receiver_id = $receiver) || 
+                        (sender_id = $receiver AND receiver_id = $sender)
+                  ORDER BY id DESC LIMIT 1";
+        try {
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $message = $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+
+        return $message ? $message : [
+            'msg' => '',
+            'sender_id' => $sender,
+            'receiver_id' => $receiver,
+        ];
+    }
 }

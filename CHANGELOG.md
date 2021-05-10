@@ -1,5 +1,11 @@
 # CHANGE LOG
 
+## Version 0.0.9 / 2021-05-09
+### `Show last message`
+* 使用者列表顯示對話最後一則訊息
+    2. `php/classes/Message.php` - 新增取得雙方對話的最後一則訊息，若無則回傳空字串
+    1. `php/dealUserList.php` - 當在迭代使用者列表時，搜尋雙方的最後一則訊息，處理並顯示
+---
 ## Version 0.0.8 / 2021-05-10
 ### `Chat completed`
 * `Message`物件建立，有傳送訊息跟拿取雙方對話內容的兩個方法 - `php/classes/Message.php`
