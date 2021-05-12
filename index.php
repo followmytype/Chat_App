@@ -10,24 +10,24 @@
         <section class="form signup">
             <header>Realtime Chat App</header>
             <form action="" enctype="multipart/form-data">
-                <div class="error-txt">This is an error message!!</div>
+                <div class="error-txt">錯誤訊息唷!!</div>
                 <div class="name-details">
                     <div class="field input">
-                        <label>Nick Name</label>
-                        <input type="text" name="nick_name" placeholder="Enter your nick name" required>
+                        <label>暱稱</label>
+                        <input type="text" name="nick_name" placeholder="請輸入你的暱稱" required>
                     </div>
                 </div>
                 <div class="field input">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <label>Email帳號</label>
+                    <input type="email" name="email" placeholder="作為登入的email" required>
                 </div>
                 <div class="field input">
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter new password" required>
+                    <label>密碼</label>
+                    <input type="password" name="password" placeholder="請輸入密碼" required>
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field image">
-                    <label>Select image</label>
+                    <label>選擇大頭貼</label>
                     <ul>
                         <li class="photo"><img src="images/dog.jpg"></li>
                         <li class="photo"><img src="images/duck.png"></li>
@@ -41,10 +41,10 @@
                     <!-- <input type="file" accept="image/*"> -->
                 </div>
                 <div class="field buttom">
-                    <input type="submit" value="Continue to Chat">
+                    <input type="submit" value="前往聊天室">
                 </div>
             </form>
-            <div class="link">Already signed up? <a href="login.php">Login now</a></div>
+            <div class="link">已經註冊？ <a href="login.php">前往登入</a></div>
         </section>
     </div>
 

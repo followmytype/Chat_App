@@ -27,7 +27,7 @@ class Users {
     public function create(array $data)
     {
         if ($this->getUser($data['email'])) {
-            return ['errors' => ['User is existed.'], 'data' => ''];
+            return ['errors' => ['使用者已存在'], 'data' => ''];
         }
         $dateTime = new DateTime('now', new DateTimeZone('Asia/Taipei'));
 

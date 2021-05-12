@@ -24,14 +24,14 @@
                     <img src="images/<?php echo $user['image_url']; ?>">
                     <div class="details">
                         <span><?php echo $user['nick_name']; ?></span>
-                        <p><?php echo $user['status'] ? 'Active now' : 'offline'; ?></p>
+                        <p><?php echo $user['status'] ? '線上' : '離線'; ?></p>
                     </div>
                 </div>
-                <a href="php/logout.php?user_id=<?php echo $_SESSION['user_id']; ?>" class="logout">Logout</a>
+                <a href="php/logout.php?user_id=<?php echo $_SESSION['user_id']; ?>" class="logout">登出</a>
             </header>
             <div class="search">
-                <span class="text">Select an user to start chat</span>
-                <input type="text" placeholder="Enter name to search...">
+                <span class="text">選擇使用者開始聊天</span>
+                <input type="text" placeholder="輸入搜尋暱稱...">
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">

@@ -10,21 +10,21 @@
         <section class="form login">
             <header>Realtime Chat App</header>
             <form action="">
-                <div class="error-txt">This is an error message!!</div>
+                <div class="error-txt">錯誤訊息唷!!</div>
                 <div class="field input">
-                    <label>Email Address</label>
-                    <input type="text" placeholder="Enter your email" name="email" required>
+                    <label>Email</label>
+                    <input type="text" placeholder="請輸入登入信箱" name="email" required>
                 </div>
                 <div class="field input">
-                    <label>Password</label>
-                    <input type="password" placeholder="Enter your password" name="password" required>
+                    <label>密碼</label>
+                    <input type="password" placeholder="請輸入登入密碼" name="password" required>
                     <i class="fas fa-eye"></i>
                 </div>
                 <div class="field buttom">
-                    <input type="submit" value="Continue to Chat">
+                    <input type="submit" value="前往聊天室">
                 </div>
             </form>
-            <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
+            <div class="link">還沒註冊嗎？ <a href="index.php">前往註冊</a></div>
         </section>
     </div>
 

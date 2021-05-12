@@ -32,7 +32,7 @@
             <form action="" class="typing-area">
                 <input type="hidden" name="sender_id" value="<?php echo $_SESSION['user_id']; ?>">
                 <input type="hidden" name="receiver_id" value="<?php echo $_GET['user_id']; ?>">
-                <input type="text" name="message" class="input-field" placeholder="Type a message here...">
+                <input type="text" name="message" class="input-field" placeholder="輸入訊息...">
                 <button><i class="fab fa-telegram-plane"></i></button>
             </form>
         </section>

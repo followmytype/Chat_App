@@ -45,7 +45,7 @@ class FormValidate {
     {
         foreach ($this->keys as $key) {
             if (!isset($this->datas[$key]) || strlen(trim($this->datas[$key])) == 0) {
-                $this->error[] = "$key is required.";
+                $this->error[] = "$key 必填";
             } else {
                 $this->datas[$key] = htmlentities($this->datas[$key]);
             }
@@ -59,7 +59,7 @@ class FormValidate {
         }
         if ($this->type == 'register' || $this->type == 'login') {
             if (!filter_var($this->datas['email'], FILTER_VALIDATE_EMAIL)) {
-                $this->error[] = "Invalid Email.";
+                $this->error[] = "無效的Email";
             }
         }
     }
@@ -72,7 +72,7 @@ class FormValidate {
         if ($this->type == 'register') {
             $images = ["dog.jpg", "duck.png", "frog.jpg", "light.png", "lovely.jpg", "smartphone.jpg", "tiger.png", "tooth.png"];
             if (!in_array($this->datas['image'], $images)) {
-                $this->error[] = "Invalid image.";
+                $this->error[] = "無效的圖片";
             }
         }
     }

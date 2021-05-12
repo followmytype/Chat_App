@@ -24,6 +24,6 @@
             $userOb->loginout($user['user_id'], true);
             echo json_encode(['errors' => []]);
         } else {
-            echo json_encode(['errors' => ['Email & password error.']]);
+            echo json_encode(['errors' => ['信箱或密碼錯誤']]);
         }
     }
