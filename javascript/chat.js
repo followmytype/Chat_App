@@ -3,6 +3,7 @@ const inputField = form.querySelector(".input-field");
 const sendBtn = form.querySelector("button");
 const chatBox = document.querySelector(".chat-area .chat-box");
 const userImgSrc = document.querySelector(".chat-area header img").src;
+let last_id = 0;
 
 form.onsubmit = (e) => {
     e.preventDefault();
@@ -43,8 +44,10 @@ setInterval(() => {
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                let data = xhr.response;
-                chatBox.innerHTML = data;
+                let data = JSON.parse(xhr.response);
+                // console.log(data.last_id);
+                last_id = data.last_id;
+                chatBox.insertAdjacentHTML('beforeend', data.data);
                 if (!chatBox.classList.contains('active')) {
                     scrollToBottom();
                 }
@@ -55,6 +58,7 @@ setInterval(() => {
     let formData = new FormData(form);
     formData.delete('message');
     formData.append('user_img', userImgSrc);
+    formData.append('last_id', last_id);
 
     xhr.send(formData);
 }, 500);

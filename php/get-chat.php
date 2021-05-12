@@ -11,24 +11,30 @@
         $conn = $database->connect();
         $messageOb = new Message($conn);
     
-        $messages = $messageOb->getTalk($_POST['sender_id'], $_POST['receiver_id']);
+        $messages = $messageOb->getTalk($_POST['sender_id'], $_POST['receiver_id'], $_POST['last_id']);
 
-        foreach ($messages as $key => $message) {
-            if ($message['sender_id'] == $_SESSION['user_id']) {
-                echo "<div class='chat outgoing'>
-                    <div class='details'>
-                        <p>$message[msg]</p>
-                    </div>
-                </div>";
-            } else {
-                echo "<div class='chat incoming'>
-                    <img src='$_POST[user_img]' alt=''>
-                    <div class='details'>
-                        <p>$message[msg]</p>
-                    </div>
-                </div>";
+        if (count($messages) == 0) {
+            $response = ['data' => '', 'last_id' => $_POST['last_id']];
+        } else {
+            $response = ['data' => '', 'last_id' => end($messages)['id']];
+            foreach ($messages as $key => $message) {
+                if ($message['sender_id'] == $_SESSION['user_id']) {
+                    $response['data'] .= "<div class='chat outgoing'>
+                        <div class='details'>
+                            <p>$message[msg]</p>
+                        </div>
+                    </div>";
+                } else {
+                    $response['data'] .= "<div class='chat incoming'>
+                        <img src='$_POST[user_img]' alt=''>
+                        <div class='details'>
+                            <p>$message[msg]</p>
+                        </div>
+                    </div>";
+                }
             }
         }
+        echo json_encode($response);
     } else {
         header('../login.php');
     }

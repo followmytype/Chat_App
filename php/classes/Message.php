@@ -34,7 +34,10 @@ class Message {
         try {
             $stmt = $this->db->prepare($insertQuery);
             $stmt->execute([$this->sender_id, $this->receiver_id, $this->msg, $this->created_at]);
-            return ['errors' => [], 'data' => 'success'];
+            return [
+                'errors' => [], 
+                'data' => $this->getLastTalk($this->sender_id, $this->receiver_id)
+            ];
         } catch (PDOException $e) {
             return ['errors' => [$e->getMessage()], 'data' => ''];
         }
