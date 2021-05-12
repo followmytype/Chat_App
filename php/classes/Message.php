@@ -59,19 +59,8 @@ class Message {
 
     public function getLastTalk($sender, $receiver)
     {
-        $query = "SELECT * FROM $this->table 
-                  WHERE (sender_id = $sender AND receiver_id = $receiver) || 
-                        (sender_id = $receiver AND receiver_id = $sender)
-                  ORDER BY id DESC LIMIT 1";
-        try {
-            $stmt = $this->db->prepare($query);
-            $stmt->execute();
-            $message = $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
-
-        return $message ? $message : [
+        $talks = $this->getTalk($sender, $receiver, 0, 1);
+        return count($talks) == 1 ? $talks[0] : [
             'msg' => '',
             'sender_id' => $sender,
             'receiver_id' => $receiver,
